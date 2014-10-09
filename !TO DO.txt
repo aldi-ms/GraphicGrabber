@@ -1,0 +1,2 @@
+- create a folder for each url downloaded (N button menu);
+- save extensions/options to file, make ext editable in-program.
