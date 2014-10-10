@@ -1,3 +1,4 @@
 - create a folder for each url downloaded (N button menu);
 - implement savePath edit through menu, save to file
 - save extensions/options to file
+- check website string length for overflow? (use long?)
