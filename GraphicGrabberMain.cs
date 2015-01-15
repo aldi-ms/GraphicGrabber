@@ -49,6 +49,7 @@ namespace GraphicGrabber
                             Tools.DownloadURL(Tools.GetSiteURLs(Console.ReadLine(), extensions.ToArray()));;
                             Console.WriteLine("finished");
                             break;
+
                         case ConsoleKey.R:
                             Console.WriteLine("\nchange save folder.\ncurrent save folder: \"{0}\"", savePath);
                             Console.Write("input new folder path (should exist), or ~ for default: ");
@@ -58,8 +59,16 @@ namespace GraphicGrabber
                                 savePath = @"..\..\grabbed\";
                                 Console.WriteLine("path set to default.");
                             }
-                            else Console.WriteLine("path edited.");
+                            else
+                            {
+                                // check for last slash (otherwise directory name is added to file name)
+                                if (savePath[savePath.Length - 1] != '\\')
+                                    savePath += '\\';
+
+                                Console.WriteLine("path edited.");
+                            }
                             break;
+
                         case ConsoleKey.X:
                             VisualTools.ExtensionMenu();
                             //bool innerLoop = true;
@@ -68,9 +77,11 @@ namespace GraphicGrabber
 
                             //}
                             break;
+
                         case ConsoleKey.M:
                             VisualTools.MainMenu();
                             break;
+
                         case ConsoleKey.Escape:
                             loop = false;
                             break;

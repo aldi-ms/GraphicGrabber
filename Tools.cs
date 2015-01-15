@@ -54,9 +54,13 @@ namespace GraphicGrabber
                 {
                     if (insideBody)
                     {
-                        if (source[i] == 'h' && source[i + 1] == 'r' && source[i + 2] == 'e' && source[i + 3] == 'f')
+                        if (source[i] == 'h' && 
+                            source[i + 1] == 'r' && 
+                            source[i + 2] == 'e' && 
+                            source[i + 3] == 'f')
                         {
-                            for (int j = i + 4; j < i + 10; j++)         //<-- in 10 symbols the " or ' char meaning an opening of a ling (href="..") has to be met
+                            // The " or ' chars  have to be met (opening of a link (href="..")).
+                            for (int j = i + 4; j < i + 10; j++)
                             {
                                 if (source[j] == '\"' || source[j] == '\'')
                                 {
